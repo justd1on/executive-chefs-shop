@@ -1,12 +1,25 @@
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
+import ProductGrid from "@/components/ProductGrid";
+import WhyRidge from "@/components/WhyRidge";
+import Reviews from "@/components/Reviews";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold tracking-tight mb-4">
-        The Executive Chef Collection
-      </h1>
-      <p className="text-lg text-neutral-400">
-        Precision. Power. Perfection.
-      </p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <TrustBar />
+        <ProductGrid />
+        <WhyRidge />
+        <Reviews />
+        <Faq />
+      </main>
+      <Footer />
+    </>
   );
 }
