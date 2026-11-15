@@ -1,20 +1,12 @@
-const categoryLinks = [
-  "Chef Knife Sets",
-  "Damascus Collection",
-  "BBQ & Outdoor",
-  "Sharpening Tools",
-  "All Knives",
-];
+import Link from "next/link";
+import { categories } from "@/lib/products";
 
 const infoLinks = [
-  "Shipping & Payment",
-  "Loyalty Rewards",
-  "Returns Policy",
-  "Privacy Policy",
-  "Terms of Service",
+  { label: "Shipping & Payment", href: "/#faq" },
+  { label: "Loyalty Rewards", href: "/#faq" },
+  { label: "Returns Policy", href: "/#faq" },
+  { label: "Why Ridge Cutlery", href: "/why-ridge" },
 ];
-
-const guideLinks = ["How to Choose a Chef's Knife", "Caring for Your Blade"];
 
 export default function Footer() {
   return (
@@ -37,11 +29,16 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 text-sm font-bold text-white">Categories</h3>
             <ul className="space-y-2 text-sm">
-              {categoryLinks.map((l) => (
-                <li key={l}>
-                  <a href="#collection" className="hover:text-copper-light">
-                    {l}
-                  </a>
+              <li>
+                <Link href="/knives" className="hover:text-copper-light">
+                  All Knives
+                </Link>
+              </li>
+              {categories.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/knives/${c.slug}`} className="hover:text-copper-light">
+                    {c.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -50,10 +47,10 @@ export default function Footer() {
             <h3 className="mb-3 text-sm font-bold text-white">Information</h3>
             <ul className="space-y-2 text-sm">
               {infoLinks.map((l) => (
-                <li key={l}>
-                  <a href="#faq" className="hover:text-copper-light">
-                    {l}
-                  </a>
+                <li key={l.label}>
+                  <Link href={l.href} className="hover:text-copper-light">
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -61,13 +58,16 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 text-sm font-bold text-white">Buying Guides</h3>
             <ul className="space-y-2 text-sm">
-              {guideLinks.map((l) => (
-                <li key={l}>
-                  <a href="#why-ridge" className="hover:text-copper-light">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link href="/#why-ridge" className="hover:text-copper-light">
+                  How to Choose a Chef&apos;s Knife
+                </Link>
+              </li>
+              <li>
+                <Link href="/#why-ridge" className="hover:text-copper-light">
+                  Caring for Your Blade
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

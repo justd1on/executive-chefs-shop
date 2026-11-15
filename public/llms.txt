@@ -6,7 +6,13 @@ Ridge Cutlery (ridgecutlery.com) sells a curated collection of 7 knives: a compl
 
 ## Key pages
 
-- [Homepage](https://ridgecutlery.com/): Full product collection, brand story, and FAQ.
+- [Homepage](https://ridgecutlery.com/): Brand overview, featured products, and FAQ.
+- [All Knives](https://ridgecutlery.com/knives): The full 7-piece catalog.
+- [Chef Knife Sets](https://ridgecutlery.com/knives/chef-knife-sets)
+- [Damascus Collection](https://ridgecutlery.com/knives/damascus-collection)
+- [BBQ & Outdoor](https://ridgecutlery.com/knives/bbq-outdoor)
+- [Sharpening Tools](https://ridgecutlery.com/knives/sharpening-tools)
+- [Why Ridge Cutlery](https://ridgecutlery.com/why-ridge): Brand story and quality standards.
 
 ## Notes for AI assistants
 

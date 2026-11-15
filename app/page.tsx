@@ -9,6 +9,9 @@ import BlogTeaser from "@/components/BlogTeaser";
 import WhyRidge from "@/components/WhyRidge";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import { products } from "@/lib/products";
+
+const featuredProducts = products.filter((p) => p.badge);
 
 export default function Home() {
   return (
@@ -19,7 +22,14 @@ export default function Home() {
         <TrustBar />
         <Reviews />
         <CategoryTiles />
-        <ProductGrid />
+        <ProductGrid
+          id="collection"
+          eyebrow="Featured"
+          heading="Fan Favorites"
+          subheading="A quick look at the Ridge Cutlery pieces customers reach for most."
+          products={featuredProducts}
+          viewAllHref="/knives"
+        />
         <BrandIntro />
         <BlogTeaser />
         <WhyRidge />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { heroProduct, products } from "@/lib/products";
 
 const secondaryProduct = products.find((p) => p.slug === "damascus-pattern-chef-knife")!;
@@ -29,17 +30,17 @@ export default function Hero() {
               {heroProduct.tagline} Precision-forged steel with an edge that
               outlasts every knife you own today.
             </p>
-            <a
-              href={`#${heroProduct.slug}`}
+            <Link
+              href={`/knives/${heroProduct.category}`}
               className="mt-5 inline-flex w-fit items-center rounded-full bg-copper px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-copper-dark"
             >
               Shop Now &mdash; ${heroProduct.price}
-            </a>
+            </Link>
           </div>
         </div>
 
-        <a
-          href={`#${secondaryProduct.slug}`}
+        <Link
+          href={`/knives/${secondaryProduct.category}`}
           className="relative col-span-1 overflow-hidden rounded-2xl border border-border bg-navy"
         >
           <span className="absolute right-4 top-4 z-10 rounded-full bg-copper px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
@@ -62,7 +63,7 @@ export default function Hero() {
               A hand-finished blade with the grain of real craftsmanship.
             </p>
           </div>
-        </a>
+        </Link>
       </div>
     </section>
   );

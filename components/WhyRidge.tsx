@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const pillars = [
   {
     title: "Forged, Not Stamped",
@@ -37,6 +39,14 @@ export default function WhyRidge() {
               <p className="mt-2 text-sm text-muted">{pillar.body}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/why-ridge"
+            className="inline-flex items-center text-sm font-semibold text-copper-dark hover:text-copper"
+          >
+            Learn more about Ridge Cutlery &rarr;
+          </Link>
         </div>
       </div>
     </section>
