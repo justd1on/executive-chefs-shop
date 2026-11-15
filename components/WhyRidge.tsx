@@ -15,26 +15,26 @@ const pillars = [
 
 export default function WhyRidge() {
   return (
-    <section id="why-ridge" className="border-y border-border bg-surface">
-      <div className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-copper-light">
+    <section id="why-ridge" className="bg-background">
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-copper-dark">
             Why Ridge Cutlery
           </span>
-          <h2 className="font-display mt-3 text-4xl tracking-wide text-foreground md:text-5xl">
+          <h2 className="font-display mt-2 text-3xl font-bold text-foreground md:text-4xl">
             Built By People Who Actually Cook
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="rounded-2xl border border-border bg-surface-raised p-8"
+              className="rounded-2xl border border-border bg-surface p-8"
             >
-              <h3 className="font-display text-2xl tracking-wide text-copper-light">
+              <h3 className="font-display text-lg font-bold text-foreground">
                 {pillar.title}
               </h3>
-              <p className="mt-3 text-sm text-steel">{pillar.body}</p>
+              <p className="mt-2 text-sm text-muted">{pillar.body}</p>
             </div>
           ))}
         </div>

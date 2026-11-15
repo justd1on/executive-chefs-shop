@@ -1,13 +1,14 @@
 import Image from "next/image";
 import type { Product } from "@/lib/products";
+import Stars from "./Stars";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <article
       id={product.slug}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-copper/60"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-background transition hover:border-copper hover:shadow-md"
     >
-      <div className="relative aspect-square overflow-hidden bg-surface-raised">
+      <div className="relative aspect-square overflow-hidden bg-surface">
         <Image
           src={product.image}
           alt={`${product.name} knife photographed outdoors`}
@@ -16,28 +17,35 @@ export default function ProductCard({ product }: { product: Product }) {
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
         />
         {product.badge && (
-          <span className="absolute left-4 top-4 rounded-full bg-copper px-3 py-1 text-xs font-semibold uppercase tracking-wide text-background">
+          <span className="absolute left-3 top-3 rounded-md bg-copper px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-white">
             {product.badge}
           </span>
         )}
       </div>
-      <div className="flex flex-1 flex-col gap-2 p-6">
-        <h3 className="font-display text-xl tracking-wide text-foreground">
+      <div className="flex flex-1 flex-col gap-1.5 p-5">
+        <h3 className="font-display text-base font-bold leading-snug text-foreground">
           {product.name}
         </h3>
-        <p className="text-sm text-steel">{product.tagline}</p>
-        <p className="mt-1 text-sm text-steel/80">{product.description}</p>
-        <div className="mt-auto flex items-center justify-between pt-6">
-          <span className="font-display text-2xl text-copper-light">
+        <div className="flex items-center gap-2">
+          <Stars rating={product.rating} />
+          <span className="text-xs text-muted">({product.reviewCount})</span>
+        </div>
+        <p className="text-sm text-muted">{product.description}</p>
+        <div className="mt-2 flex items-center justify-between">
+          <span className="font-display text-xl font-bold text-foreground">
             ${product.price}
           </span>
-          <button
-            type="button"
-            className="rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition hover:bg-copper hover:text-background"
-          >
-            Buy Now
-          </button>
+          <span className="text-xs font-semibold text-emerald-700">
+            {product.inStock ? "In Stock" : "Out of Stock"}
+          </span>
         </div>
+        <button
+          type="button"
+          className="mt-3 w-full rounded-full bg-copper py-2.5 text-sm font-semibold text-white transition hover:bg-copper-dark"
+        >
+          Add to Cart
+        </button>
+        <span className="mt-2 text-[11px] text-muted">SKU: {product.sku}</span>
       </div>
     </article>
   );

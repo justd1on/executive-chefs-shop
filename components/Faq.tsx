@@ -36,26 +36,26 @@ const faqJsonLd = {
 
 export default function Faq() {
   return (
-    <section id="faq" className="border-t border-border bg-surface">
-      <div className="mx-auto max-w-4xl px-6 py-24">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-copper-light">
+    <section id="faq" className="border-t border-border bg-background">
+      <div className="mx-auto max-w-4xl px-6 py-20">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <span className="text-xs font-bold uppercase tracking-widest text-copper-dark">
             Frequently Asked Questions
           </span>
-          <h2 className="font-display mt-3 text-4xl tracking-wide text-foreground md:text-5xl">
+          <h2 className="font-display mt-2 text-3xl font-bold text-foreground md:text-4xl">
             Know Before You Buy
           </h2>
         </div>
-        <dl className="space-y-6">
+        <dl className="space-y-4">
           {faqs.map((faq) => (
             <div
               key={faq.question}
-              className="rounded-2xl border border-border bg-surface-raised p-6"
+              className="rounded-2xl border border-border bg-surface p-6"
             >
-              <dt className="font-display text-lg tracking-wide text-foreground">
+              <dt className="font-display text-base font-bold text-foreground">
                 {faq.question}
               </dt>
-              <dd className="mt-2 text-sm text-steel">{faq.answer}</dd>
+              <dd className="mt-2 text-sm text-muted">{faq.answer}</dd>
             </div>
           ))}
         </dl>
