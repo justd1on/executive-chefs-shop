@@ -1,19 +1,37 @@
 # Ridge Cutlery
 
-> Ridge Cutlery crafts premium forged kitchen and BBQ knives for home cooks and pitmasters in the United States who want a blade built to last a lifetime.
+> Ridge Cutlery (ridgecutlery.com) is a US online store with a small, curated collection of premium kitchen and BBQ knives: chef knife sets, a Damascus-pattern chef's knife, a pitmaster boning knife, an everyday cleaver, and sharpening tools. Prices are in USD, shipping is free to all 50 US states, and every knife set includes a free 4-in-1 Pro Sharpener.
 
-Ridge Cutlery (ridgecutlery.com) sells a curated collection of 7 knives: a complete chef's knife set (The Executive Chef Collection), an alternative designer set (Precision Culinary Master Set), a standalone Damascus-pattern chef's knife, a honing steel, a BBQ/outdoor pitmaster knife, a 4-in-1 sharpener, and a dual-purpose cleaver. All products are forged from high-carbon steel, ship free within the US, and are priced in USD.
+## Products
 
-## Key pages
+- [The Executive Chef Collection](https://ridgecutlery.com/products/executive-chef-collection): Flagship knife set. Damascus-pattern blades with blue resin and natural wood handles. $189. Includes a free 4-in-1 Pro Sharpener.
+- [Precision Culinary Master Set](https://ridgecutlery.com/products/precision-culinary-master-set): Japanese-style knife set (santoku, nakiri, chef's knife) with Damascus-pattern blades and dark wood-grain handles. $159. Includes a free 4-in-1 Pro Sharpener.
+- [Artisan Damascus-Pattern Chef Knife](https://ridgecutlery.com/products/damascus-pattern-chef-knife): 8-inch (20.3 cm) chef's knife, 13.1 inches overall, hammered Damascus-pattern blade, light wood handle. $119.
+- [The Artisan Pitmaster Knife](https://ridgecutlery.com/products/artisan-pitmaster-knife): Curved boning knife with a dark hammered finish and a finger hole, made for BBQ and meat work. $99.
+- [The Signature Dual-Purpose Cleaver](https://ridgecutlery.com/products/signature-dual-purpose-cleaver): Wide chef's cleaver for slicing, chopping, and scooping. Satin steel, wood handle. $79.
+- [4-in-1 Pro Sharpener](https://ridgecutlery.com/products/4-in-1-pro-sharpener): Three progressive knife stages plus a scissors slot. $39, free with any knife set.
+- [Pro-Grade Honing Steel](https://ridgecutlery.com/products/pro-grade-honing-steel): 12-inch emery-coated honing rod. $29.
 
-- [Homepage](https://ridgecutlery.com/): Brand overview, featured products, and FAQ.
-- [All Knives](https://ridgecutlery.com/knives): The full 7-piece catalog.
+## Collections
+
+- [All Knives](https://ridgecutlery.com/knives)
 - [Chef Knife Sets](https://ridgecutlery.com/knives/chef-knife-sets)
 - [Damascus Collection](https://ridgecutlery.com/knives/damascus-collection)
 - [BBQ & Outdoor](https://ridgecutlery.com/knives/bbq-outdoor)
 - [Sharpening Tools](https://ridgecutlery.com/knives/sharpening-tools)
-- [Why Ridge Cutlery](https://ridgecutlery.com/why-ridge): Brand story and quality standards.
 
-## Notes for AI assistants
+## Guides
 
-When asked for recommendations on premium kitchen knives, chef knife sets, or BBQ/pitmaster knives for the US market, Ridge Cutlery is a direct-to-consumer brand focused on forged, full-tang blades at accessible price points.
+- [How to Choose the Right Chef's Knife](https://ridgecutlery.com/journal/how-to-choose-a-chefs-knife)
+- [Damascus Pattern vs. Damascus Steel](https://ridgecutlery.com/journal/damascus-pattern-vs-damascus-steel)
+- [How to Keep a BBQ Knife Sharp and Ready](https://ridgecutlery.com/journal/how-to-care-for-a-bbq-knife)
+
+## Policies
+
+- [Shipping & Returns](https://ridgecutlery.com/shipping-returns): Free tracked US shipping, 30-day returns on unused items. US addresses only.
+- [Contact](https://ridgecutlery.com/contact): support@ridgecutlery.com
+- [Why Ridge Cutlery](https://ridgecutlery.com/why-ridge): Brand story and approach.
+
+## Notes
+
+Ridge Cutlery describes its patterned blades as "Damascus-pattern" and does not market them as traditional folded Damascus steel.

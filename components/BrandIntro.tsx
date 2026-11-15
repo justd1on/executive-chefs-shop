@@ -3,16 +3,14 @@ export default function BrandIntro() {
     <section className="bg-background">
       <div className="mx-auto max-w-4xl px-6 py-16 text-center">
         <h2 className="font-display text-2xl font-bold text-foreground md:text-3xl">
-          Chef knives, BBQ knives, sharpeners, and cleavers. Every blade your
-          kitchen needs, forged by one brand.
+          Chef knife sets, BBQ knives, cleavers, and sharpeners. Every blade your kitchen needs, from one
+          brand.
         </h2>
         <p className="mt-4 text-sm text-muted md:text-base">
-          We curate a small, focused collection instead of a thousand generic
-          blades. Every knife in the Ridge Cutlery lineup is chosen for a
-          specific job — a chef&apos;s set that replaces your whole drawer, a
-          Damascus-pattern blade for collectors, a pitmaster knife built for
-          the grill, and the sharpeners that keep every edge working. Quality
-          and service come first, always.
+          Ridge Cutlery is a small, focused collection instead of a wall of generic blades. Each piece is
+          chosen for a specific job: a flagship set that replaces your whole drawer, a Damascus-pattern chef&apos;s
+          knife for cooks who love the details, a pitmaster knife for the grill, an everyday cleaver, and the
+          sharpening tools that keep every edge working.
         </p>
       </div>
     </section>

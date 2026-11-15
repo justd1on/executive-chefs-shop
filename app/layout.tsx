@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import CartDrawer from "@/components/cart/CartDrawer";
+import JsonLd from "@/components/JsonLd";
+import { store } from "@/lib/store";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,81 +18,45 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://ridgecutlery.com";
+const description =
+  "Ridge Cutlery offers a curated collection of premium kitchen and BBQ knives: Damascus-pattern chef knife sets, pitmaster knives, cleavers, and sharpeners, with free shipping across the US.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(store.url),
   title: {
-    default: "Ridge Cutlery | Premium Forged Kitchen & BBQ Knives",
+    default: "Ridge Cutlery | Premium Kitchen & BBQ Knives",
     template: "%s | Ridge Cutlery",
   },
-  description:
-    "Ridge Cutlery crafts premium forged kitchen and BBQ knives for home cooks and pitmasters who demand precision, durability, and a blade built to last a lifetime.",
-  keywords: [
-    "premium kitchen knives",
-    "chef knife set",
-    "Damascus pattern knife",
-    "BBQ pitmaster knife",
-    "forged steel knives",
-    "Ridge Cutlery",
-  ],
+  description,
   openGraph: {
     type: "website",
-    url: siteUrl,
-    siteName: "Ridge Cutlery",
-    title: "Ridge Cutlery | Premium Forged Kitchen & BBQ Knives",
-    description:
-      "Premium forged kitchen and BBQ knives for home cooks and pitmasters who demand precision and durability.",
-    images: [
-      {
-        url: "/images/hero-executive-chef-collection.png",
-        width: 1200,
-        height: 675,
-        alt: "The Executive Chef Collection knife set on a wooden table",
-      },
-    ],
+    siteName: store.name,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ridge Cutlery | Premium Forged Kitchen & BBQ Knives",
-    description:
-      "Premium forged kitchen and BBQ knives for home cooks and pitmasters who demand precision and durability.",
-    images: ["/images/hero-executive-chef-collection.png"],
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Store",
-  name: "Ridge Cutlery",
-  url: siteUrl,
-  description:
-    "Ridge Cutlery crafts premium forged kitchen and BBQ knives for home cooks and pitmasters who demand precision, durability, and a blade built to last a lifetime.",
-  image: `${siteUrl}/images/hero-executive-chef-collection.png`,
-  areaServed: "US",
-  brand: {
-    "@type": "Brand",
-    name: "Ridge Cutlery",
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${poppins.variable} h-full antialiased`}
-    >
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+    <html lang="en" className={`${inter.variable} ${poppins.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "OnlineStore",
+            name: store.name,
+            url: store.url,
+            email: store.email,
+            description,
+            areaServed: "US",
+          }}
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
-        {children}
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <CartDrawer />
       </body>
     </html>
   );

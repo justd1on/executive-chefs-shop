@@ -1,36 +1,38 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import PageBanner from "@/components/PageBanner";
 import CategoryTiles from "@/components/CategoryTiles";
 import ProductGrid from "@/components/ProductGrid";
-import { products } from "@/lib/products";
+import { heroProduct, products } from "@/lib/products";
+
+const description =
+  "Shop the full Ridge Cutlery collection: chef knife sets, the Damascus-pattern chef's knife, a pitmaster BBQ knife, an everyday cleaver, and sharpening tools.";
 
 export const metadata: Metadata = {
   title: "All Knives",
-  description:
-    "Browse the full Ridge Cutlery collection: forged chef knife sets, the Damascus-pattern knife, BBQ and outdoor blades, and sharpening tools.",
+  description,
+  alternates: { canonical: "/knives" },
+  openGraph: {
+    title: "All Knives | Ridge Cutlery",
+    description,
+    url: "/knives",
+    images: [{ url: heroProduct.images[0].src, alt: heroProduct.images[0].alt }],
+  },
 };
 
 export default function AllKnivesPage() {
   return (
     <>
-      <Header />
-      <main>
-        <PageBanner
-          eyebrow="The Full Collection"
-          title="All Knives"
-          description="Seven forged pieces, each built for a specific job in your kitchen or at the grill."
-          image="/images/hero-executive-chef-collection.png"
-        />
-        <CategoryTiles />
-        <ProductGrid
-          heading="Every Ridge Cutlery Knife"
-          subheading="From the everyday chef's set to the specialty collector's blade."
-          products={products}
-        />
-      </main>
-      <Footer />
+      <Breadcrumbs items={[{ label: "All Knives", href: "/knives" }]} />
+      <PageBanner
+        eyebrow="The Full Collection"
+        title="All Knives"
+        description={`${products.length} pieces, each chosen for a specific job in your kitchen or at the grill.`}
+        image={heroProduct.images[0].src}
+        imageAlt={heroProduct.images[0].alt}
+      />
+      <CategoryTiles />
+      <ProductGrid products={products} />
     </>
   );
 }

@@ -1,66 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
-import { heroProduct, products } from "@/lib/products";
+import { getProduct, heroProduct } from "@/lib/products";
+import { formatPrice } from "@/lib/store";
 
-const secondaryProduct = products.find((p) => p.slug === "damascus-pattern-chef-knife")!;
+const secondary = getProduct("damascus-pattern-chef-knife")!;
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-8">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="relative col-span-2 overflow-hidden rounded-2xl border border-border bg-surface">
-          <div className="relative aspect-[16/8] w-full">
-            <Image
-              src={heroProduct.image}
-              alt="The Executive Chef Collection knife set resting on a wooden table outdoors"
-              fill
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/30 to-transparent" />
-          </div>
-          <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-center px-8">
-            <span className="mb-3 text-xs font-bold uppercase tracking-widest text-copper-dark">
-              Forged for the serious kitchen
-            </span>
-            <h1 className="font-display text-3xl font-bold leading-tight text-foreground md:text-4xl">
+    <section className="mx-auto max-w-7xl px-6 py-6 md:py-8">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className="grid overflow-hidden rounded-2xl border border-border bg-surface sm:grid-cols-2 lg:col-span-2">
+          <div className="order-2 flex flex-col justify-center p-7 sm:order-1 md:p-10">
+            <span className="text-xs font-bold uppercase tracking-widest text-copper-dark">The Flagship Set</span>
+            <h1 className="font-display mt-3 text-3xl font-bold leading-tight text-foreground md:text-4xl">
               {heroProduct.name}
             </h1>
-            <p className="mt-3 text-sm text-muted">
-              {heroProduct.tagline} Precision-forged steel with an edge that
-              outlasts every knife you own today.
+            <p className="mt-3 text-sm text-muted md:text-base">
+              {heroProduct.tagline} Ships with a free 4-in-1 Pro Sharpener.
             </p>
-            <Link
-              href={`/knives/${heroProduct.category}`}
-              className="mt-5 inline-flex w-fit items-center rounded-full bg-copper px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-copper-dark"
-            >
-              Shop Now &mdash; ${heroProduct.price}
-            </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link
+                href={`/products/${heroProduct.slug}`}
+                className="rounded-full bg-copper px-6 py-3 text-sm font-semibold text-white transition hover:bg-copper-dark"
+              >
+                Shop the Set · {formatPrice(heroProduct.price)}
+              </Link>
+              <Link
+                href="/knives"
+                className="rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:border-copper"
+              >
+                All Knives
+              </Link>
+            </div>
           </div>
+          <Link
+            href={`/products/${heroProduct.slug}`}
+            className="relative order-1 aspect-[4/3] sm:order-2 sm:aspect-auto sm:min-h-80"
+          >
+            <Image
+              src={heroProduct.images[1].src}
+              alt={heroProduct.images[1].alt}
+              fill
+              preload
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </Link>
         </div>
 
         <Link
-          href={`/knives/${secondaryProduct.category}`}
-          className="relative col-span-1 overflow-hidden rounded-2xl border border-border bg-navy"
+          href={`/products/${secondary.slug}`}
+          className="group relative min-h-72 overflow-hidden rounded-2xl bg-navy"
         >
-          <span className="absolute right-4 top-4 z-10 rounded-full bg-copper px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
-            Collector&apos;s Pick
+          <Image
+            src={secondary.images[1].src}
+            alt={secondary.images[1].alt}
+            fill
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            className="object-cover opacity-80 transition duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
+          <span className="absolute left-5 top-5 rounded-md bg-copper px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-white">
+            {secondary.badge}
           </span>
-          <div className="relative aspect-[16/8] w-full md:aspect-auto md:h-full">
-            <Image
-              src={secondaryProduct.image}
-              alt="Artisan Damascus-pattern chef knife resting on a moss-covered stone outdoors"
-              fill
-              className="object-cover opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-          </div>
           <div className="absolute inset-x-0 bottom-0 p-6">
-            <h2 className="font-display text-xl font-bold text-white">
-              The Damascus Collection
-            </h2>
-            <p className="mt-1 text-sm text-white/70">
-              A hand-finished blade with the grain of real craftsmanship.
+            <h2 className="font-display text-xl font-bold text-white">{secondary.name}</h2>
+            <p className="mt-1 text-sm text-white/75">{secondary.tagline}</p>
+            <p className="mt-3 text-sm font-semibold text-copper-light">
+              {formatPrice(secondary.price)} · Shop now →
             </p>
           </div>
         </Link>

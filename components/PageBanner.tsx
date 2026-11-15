@@ -5,22 +5,29 @@ type Props = {
   title: string;
   description: string;
   image: string;
+  imageAlt: string;
 };
 
-export default function PageBanner({ eyebrow, title, description, image }: Props) {
+export default function PageBanner({ eyebrow, title, description, image, imageAlt }: Props) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-8">
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-navy">
-        <div className="relative aspect-[16/6] w-full md:aspect-[16/4]">
-          <Image src={image} alt={title} fill priority className="object-cover opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/60 to-transparent" />
-        </div>
-        <div className="absolute inset-y-0 left-0 flex max-w-xl flex-col justify-center px-8">
+    <section className="mx-auto max-w-7xl px-6 pt-6">
+      <div className="grid overflow-hidden rounded-2xl bg-navy md:grid-cols-5">
+        <div className="flex flex-col justify-center px-8 py-10 md:col-span-3 md:px-12">
           <span className="mb-2 text-xs font-bold uppercase tracking-widest text-copper-light">
             {eyebrow}
           </span>
           <h1 className="font-display text-3xl font-bold text-white md:text-4xl">{title}</h1>
-          <p className="mt-3 text-sm text-white/70 md:text-base">{description}</p>
+          <p className="mt-3 max-w-xl text-sm text-white/70 md:text-base">{description}</p>
+        </div>
+        <div className="relative aspect-[16/9] md:col-span-2 md:aspect-auto md:min-h-64">
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            preload
+            sizes="(min-width: 768px) 40vw, 100vw"
+            className="object-cover"
+          />
         </div>
       </div>
     </section>
